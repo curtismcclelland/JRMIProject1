@@ -182,12 +182,17 @@ public class Client {
     public void Print_Element() throws RemoteException, ServerNotActiveException{
         System.out.println("\nEnter the index of the string you would like to print.");
         int index = scan.nextInt();
-        String result = stub.printElement(index, this.client_id);
-        if (result != ""){
-            System.out.println(result);
-        }
-        else{
-            System.out.println("Client did not hold a lock on this element.");
+        int arraySize = stub.getArraySize();
+        if (index<arraySize){
+            String result = stub.printElement(index, this.client_id);
+            if (result != ""){
+                System.out.println(result);
+            }
+            else{
+                System.out.println("Client did not hold a lock on this element.");
+            }
+        }else{
+            System.out.println("The array is of size: "+ arraySize +", you are out of bounds");
         }
         
     }
