@@ -229,10 +229,10 @@ public class Client {
      * @throws ServerNotActiveException
      */
     public void Writeback() throws RemoteException, ServerNotActiveException{
-        System.out.println("\nEnter the index of the string you would like to read.");
+        System.out.println("\nEnter the index of the string you would like to writeback on.");
         int index = scan.nextInt();
         System.out.println("Enter the string you would like to place at that index");
-        String toAdd = scan.nextLine();
+        String toAdd = scan.next();
         int arraySize = stub.getArraySize();
         if (index < arraySize){ 
             boolean resulting = stub.WriteBackElement(toAdd, index, client_id);
