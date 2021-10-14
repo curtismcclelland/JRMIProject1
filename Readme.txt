@@ -2,6 +2,9 @@ Curtis McClelland
 Bristol King
 Spencer King
 
+Preface: JRMI library is purposed for intranet communication between server/client objects. In order
+to run this project your client devices must be on the same network as the device running the server. 
+
 TO COMPILE
 1. From JRMIProject1 directory: 
 2. javac src/example/hello/Hello.java
